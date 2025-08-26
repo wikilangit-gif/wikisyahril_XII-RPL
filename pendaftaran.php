@@ -81,37 +81,6 @@
             transform: translateY(-8px);
         }
 
-        /* Data display */
-        .data-list {
-            max-width: 500px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s ease;
-        }
-        .data-list:hover{
-            background: #2980b9;
-            transform: translateY(-9);
-            box-shadow: 0 4px 5px 0 #df710aff;
-
-        }
-
-        .data-item {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-
-        .data-item h3 {
-            margin: 0 0 10px 0;
-            color: #3498db;
-        }
-
-        .data-item p {
-            margin: 5px 0;
-        }
     </style>
 </head>
 <body>
@@ -150,56 +119,7 @@
         </div>
     </div>
 
-    <script>
-        let orderData = [];
-
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Ambil data dari form
-            let nama = document.getElementById('nama').value;
-            let novel = document.getElementById('novel').value;
-            let hp = document.getElementById('hp').value;
-            let alamat = document.getElementById('alamat').value;
-            let pesan = document.getElementById('pesan').value;
-            let jumlah = document.getElementById('jumlah').value;
-
-            // Tambah ke array
-            orderData.push({
-                nama: nama,
-                novel: novel,
-                hp: hp,
-                alamat: alamat,
-                pesan: pesan,
-                jumlah: jumlah
-            });
-
-            // Tampilkan data
-            showData();
-
-            // Reset form
-            this.reset();
-        });
-
-        function showData() {
-            let html = '';
-            
-            for(let i = 0; i < orderData.length; i++) {
-                html += `
-                    <div class="data-item">
-                        <h3>${orderData[i].nama}</h3>
-                        <p><strong>Novel:</strong> ${orderData[i].novel}</p>
-                        <p><strong>HP:</strong> ${orderData[i].hp}</p>
-                        <p><strong>Alamat:</strong> ${orderData[i].alamat}</p>
-                        <p><strong>Pesan:</strong> ${orderData[i].pesan}</p>
-                        <p><strong>Jumlah:</strong> ${orderData[i].jumlah}</p>
-                    </div>
-                `;
-            }
-
-            document.getElementById('orders').innerHTML = html;
-        }
-    </script>
+   
     
 </body>
 <?php include 'footer.php'?>
